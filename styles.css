@@ -1,0 +1,132 @@
+/* Root Variables */
+:root{
+  --bg:#0b0f14;
+  --panel:#111827;
+  --muted:#94a3b8;
+  --text:#e5e7eb;
+  --accent:#60a5fa;
+  --accent-2:#22d3ee;
+  --ring: 0 0 0 2px rgba(96,165,250,.35);
+  --radius:18px;
+  --gap:18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  /* image URL  */
+  --avatar-url: url("images/me.jpeg");
+}
+/* Global Styles */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1200px 700px at 80% -10%, rgba(34,211,238,.12), transparent 60%),
+              radial-gradient(900px 600px at -10% 10%, rgba(96,165,250,.10), transparent 60%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
+
+/* Header */
+header{
+  display:grid;grid-template-columns:104px 1fr;gap:22px;align-items:center;
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(148,163,184,.15);
+  border-radius: calc(var(--radius) + 6px);
+  padding:18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+}
+
+/* Avatar styles */
+.avatar{
+  width:96px;height:96px;border-radius:50%;
+  background:#0b1220 var(--avatar-url) center/cover no-repeat;
+  border:1px solid rgba(148,163,184,.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+/* Head title styles */
+.head-title{display:flex;flex-direction:column;gap:6px}
+.name{
+  font-size: clamp(24px, 3.4vw, 38px);
+  font-weight:800;letter-spacing:.3px;
+  display:flex;align-items:center;gap:10px;
+}
+/* Badge styles */
+.name .badge{
+  font-size:12px;font-weight:700;color:#0b0f14;background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  padding:6px 10px;border-radius:999px;
+  box-shadow: 0 6px 16px rgba(34,211,238,.25);
+}
+/* Subtitle styles */
+.subtitle{color:var(--muted)}
+.links{display:flex;gap:10px;margin-top:4px;flex-wrap:wrap}
+.btn{
+  appearance:none;border:none;cursor:pointer;text-decoration:none;
+  color:var(--text);background:rgba(255,255,255,.04);
+  border:1px solid rgba(148,163,184,.2);padding:10px 14px;border-radius:12px;
+  display:inline-flex;gap:8px;align-items:center;font-weight:600;
+  transition: box-shadow .2s ease, transform .15s ease;
+}
+/* Button hover and active styles */
+.btn:hover{outline: none; box-shadow: var(--ring); transform: translateY(-1px)}
+.btn.primary{background: linear-gradient(90deg, rgba(96,165,250,.25), rgba(34,211,238,.25)); border-color:transparent}
+
+/* Section title */
+.section-title{
+  margin:28px 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:.22em;color:var(--muted)
+}
+
+/* Project grid */
+.grid{display:grid;grid-template-columns:1fr;gap:var(--gap)}
+@media (min-width:820px){ .grid{ grid-template-columns:1fr 1fr } }
+
+/* Card styles */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(148,163,184,.15);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  display:flex;flex-direction:column;min-height:100%;
+}
+
+/* Project screenshot styles */
+.shot{
+  position:relative;aspect-ratio:16/9;overflow:hidden;
+  background:#0b1220;
+  border-bottom:1px solid rgba(148,163,184,.12);
+}
+/* Project screenshot styles */
+.shot img{
+  width:100%;height:100%;object-fit:cover;display:block;opacity:.95;
+  transition: transform .5s ease, opacity .4s ease;
+}
+.card:hover .shot img{ transform: scale(1.02); opacity:1 }
+
+.card-body{padding:16px 16px 14px;display:flex;flex-direction:column;gap:10px}
+.card-title{font-size:18px;font-weight:800}
+.tech{font-size:12px;color:var(--muted)}
+.summary{color:#cbd5e1}
+
+/* Details (expand area) */
+details{
+  border-top:1px dashed rgba(148,163,184,.2);
+  padding:12px 16px 16px;
+}
+
+/* Details summary styles */
+details summary{
+  cursor:pointer;list-style:none;
+  color:var(--accent);
+  font-weight:700;
+}
+/* Details marker styles */
+details summary::-webkit-details-marker{display:none}
+details[open]{background:rgba(96,165,250,.05)}
+.long-text{color:#cbd5e1;margin-top:10px}
+
+/* Footer */
+footer{margin:40px 0 0;color:var(--muted);font-size:14px;text-align:center}
